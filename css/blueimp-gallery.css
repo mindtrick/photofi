@@ -232,34 +232,3 @@ body:last-child .blueimp-gallery-playing > .play-pause {
   top: 0;
   width: 100%;
 }
-
-img{
-
-    max-width: 17% !important;
-    width: 17% !important;
-    padding: 5px;
-}
-
-.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
-    min-height: 68px !important;
-}
-
-.ui-li-has-arrow .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-arrow{
-    padding-right: 10% !important;
-}
-
-.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
-    padding-left: 25% !important;
-}
-.ui-page-theme-a .ui-btn:hover,
-html .ui-bar-a .ui-btn:hover,
-html .ui-body-a .ui-btn:hover,
-html body .ui-group-theme-a .ui-btn:hover,
-html head + body .ui-btn.ui-btn-a:hover {
-        /* Button hover style */
-}
- 
-/* Override: */
-.ui-mobile .ui-btn.ui-btn-a:hover {
-        /* Custom button hover style */
-}
