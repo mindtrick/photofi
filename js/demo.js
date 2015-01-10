@@ -10,8 +10,7 @@
  */
 
 /* global blueimp, $ */
-var app = {
-    init : function () {
+$(document).ready(function () {
     'use strict';
 
     // Load demo images from flickr:
@@ -58,5 +57,4 @@ var app = {
         carousel: true
     });
 
-    }
-}
+    });
