@@ -225,9 +225,10 @@ body:last-child .blueimp-gallery-playing > .play-pause {
   position: relative;
 }
 
+
 .ui-navbar
 {
-  position: fixed;
+  position:fixed;
   top: 0;
   width: 100%;
 }
