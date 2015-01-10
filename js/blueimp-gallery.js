@@ -713,12 +713,13 @@
                             indexForward < this.num) {
                         this.move(indexForward, distanceForward, 0);
                     }
-                    this.move(index, this.positions[index] + distanceForward, speed);
                     this.move(
                         this.circle(indexBackward),
                         this.positions[this.circle(indexBackward)] + distanceForward,
                         speed
                     );
+                    this.move(index, this.positions[index] + distanceForward, speed);
+                    
                     index = this.circle(indexBackward);
                     this.onslide(index);
                 } else {
