@@ -909,7 +909,8 @@ button[disabled],
 	outline-width: 1px;
 	outline-style: auto;
 }
-		.transparentButton {
+	.transparentButton
+	 {
     background-color: transparent !important;
     border: 0 !important;
     -webkit-box-shadow: none;
