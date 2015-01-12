@@ -909,10 +909,9 @@ button[disabled],
 	outline-width: 1px;
 	outline-style: auto;
 }
-.halivabutton
-{
-	width: -360px;
-
-	text-align: center;
+		.transparentButton {
+    background-color: transparent !important;
+    border: 0 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
-			
