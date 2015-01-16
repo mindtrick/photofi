@@ -450,7 +450,6 @@ $(document).ready(function (factory) {
                 this.options.onclosed.call(this);
             }
         },
-
         close: function () {
             var that = this,
                 closeHandler = function (event) {
@@ -754,7 +753,6 @@ $(document).ready(function (factory) {
                 delete this.touchStart;
             }
         },
-
         ontransitionend: function (event) {
             var slide = this.slides[this.index];
             if (!event || slide === event.target) {
@@ -854,7 +852,13 @@ $(document).ready(function (factory) {
                 // Click on "prev" control
                 this.preventDefault(event);
                 this.prev();
-            } else if (isTarget(options.nextClass)) {
+            } 
+            else if (isTarget(options.shareClass)) {
+                // Click on "share" control
+                this.preventDefault(event);
+                this.share();
+            }
+            else if (isTarget(options.nextClass)) {
                 // Click on "next" control
                 this.preventDefault(event);
                 this.next();

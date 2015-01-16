@@ -127,6 +127,7 @@
   left: auto;
   right: 15px;
 }
+.blueimp-gallery > .share,
 .blueimp-gallery > .close,
 .blueimp-gallery > .title {
   position: absolute;
@@ -149,6 +150,16 @@
   text-decoration: none;
   cursor: pointer;
 }
+.blueimp-gallery > .share {
+  padding: 15px;
+  right: 85px;
+  left: auto;
+  margin: -15px;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .blueimp-gallery > .play-pause {
   position: absolute;
   right: 15px;
@@ -166,6 +177,7 @@
 .blueimp-gallery > .prev:hover,
 .blueimp-gallery > .next:hover,
 .blueimp-gallery > .close:hover,
+.blueimp-gallery > .share:hover,
 .blueimp-gallery > .title:hover,
 .blueimp-gallery > .play-pause:hover {
   color: #fff;
@@ -174,6 +186,7 @@
 .blueimp-gallery-controls > .prev,
 .blueimp-gallery-controls > .next,
 .blueimp-gallery-controls > .close,
+.blueimp-gallery-controls > .share,
 .blueimp-gallery-controls > .title,
 .blueimp-gallery-controls > .play-pause {
   display: block;
@@ -195,6 +208,7 @@
 .blueimp-gallery > .prev,
 .blueimp-gallery > .next,
 .blueimp-gallery > .close,
+.blueimp-gallery > .share,
 .blueimp-gallery > .play-pause {
   -webkit-user-select: none;
    -khtml-user-select: none;
