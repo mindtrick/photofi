@@ -916,3 +916,38 @@ button[disabled],
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+.addeventIcon
+{
+	
+	background-image:url(images/icons-png/ic_action_new_event.png);
+	width: 8px;
+	height: 10px;
+	display:inline;
+	position: absolute;
+}
+.img-circular{
+ 
+ width:60px;
+ height:60px;
+ background-image: url('https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10458552_912691392080585_4488318092612700422_n.jpg?oh=456cdc733b08588511d55f3c0401ce36&oe=5525A2EC&__gda__=1429068884_a7373ee0b3ab4d60a6e5098f4505d31b');
+ background-size: cover;
+ display: block;
+ float:left;
+ border-top-left-radius: 100px;
+ -webkit-border-top-left-radius: 100px;
+ -webkit-border-bottom-right-radius: 100px;
+ -webkit-border-top-right-radius: 100px;
+ -webkit-border-bottom-left-radius: 100px;
+ border-bottom-right-radius: 100px;
+ 
+  -moz-border-top-left-radius: 100px;
+  -moz-border-bottom-right-radius: 100px;
+}
+.inline
+ {
+ 	float:left;
+ 	margin-left:10px;
+ 	position:relative;
+}
+	
+}
