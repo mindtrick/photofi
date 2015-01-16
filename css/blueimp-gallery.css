@@ -127,7 +127,6 @@
   left: auto;
   right: 15px;
 }
-.blueimp-gallery > .share,
 .blueimp-gallery > .close,
 .blueimp-gallery > .title {
   position: absolute;
@@ -151,11 +150,16 @@
   cursor: pointer;
 }
 .blueimp-gallery > .share {
-  padding: 15px;
-  right: 85px;
-  left: auto;
-  margin: -15px;
-  font-size: 30px;
+  position: absolute;
+  bottom:35px;
+  left: 15px;
+  margin: 0 40px 0 0;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  opacity: 0.8;
+  display: none;
   text-decoration: none;
   cursor: pointer;
 }
