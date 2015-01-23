@@ -330,6 +330,7 @@ Share = (function(_super) {
       url: this.config.networks.google_plus.url
     });
   };
+ 
 
   Share.prototype.network_pinterest = function() {
     return this.popup('https://www.pinterest.com/pin/create/button', {

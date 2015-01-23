@@ -565,8 +565,8 @@ html body .ui-group-theme-c .ui-bar-inherit {
 .ui-overlay-c,
 .ui-page-theme-c,
 .ui-page-theme-c .ui-panel-wrapper {
-	background-color: #000000 /*{c-page-background-color}*/;
-	border-color: #000000 /*{c-page-border}*/;
+	background-color:  #ffffff /*{c-page-background-color}*/;
+	border-color:  #ffffff /*{c-page-border}*/;
 	color: #ffffff /*{c-page-color}*/;
 	text-shadow: 0 /*{c-page-shadow-x}*/ 1px /*{c-page-shadow-y}*/ 0 /*{c-page-shadow-radius}*/ #444444 /*{c-page-shadow-color}*/;
 }
@@ -945,9 +945,111 @@ button[disabled],
 }
 .inline
  {
- 	float:left;
- 	margin-left:10px;
- 	position:relative;
+ 	
+ 	margin-top:40px;
+ 	color: white;
+ 	font-size: 12px; font-family: 'Signika', sans-serif;
+ 	
+
 }
+.image1
+{
+
+ width:100%;
+  height:75px;
+ background-image: url('http://www.bathsbudapest.com/wp-content/uploads/2013/04/Szechenyi-Bath-Party-Budapest-Szecska-Sandor-Fegyverneky.jpg');
+ background-size:100% 100%;
+ display: block;
+ float: left;
+
+
+ 
+ 
+}
+.image2
+{
+
+  width:100%;
+  height:75px;
+ background-image: url('https://cdn.evbuc.com/eventlogos/26569991/22miamiholyshipbeachparty.photobystellaperformanceusa.com.jpg');
+ background-size:100% 100%;
+
+ display: block;
+ float: left;
+ 
+ 
+}
+.image3
+{
+
+  width:100%;
+  height:75px;
+ background-image: url('http://www.theprospect.net/wp-content/uploads/2013/03/college-party2.png');
+ background-size:100% 100%;
+ display: block;
+ float: left;
+ 
+ 
+}
+.image4
+{
+
+  width:100%;
+  height:75px;
+ background-image: url('http://poachedmag.com/wp-content/uploads/2013/01/Siloso-beach-party.jpg');
+ background-size:100% 100%;
+ display: block;
+ float: left;
+ 
+ 
+}
+.image5
+{
+
+  width:100%;
+  height:75px;
+ background-image: url('http://mixdynamix.com/wp-content/uploads/2013/05/diplo-summer.jpeg');
+ background-size:100% 100%;
+ display: block;
+ float: left;
+ 
+ 
+}
+.SearchIcon
+{
 	
+	background-image: url('http://www.dreamtemplate.com/dreamcodes/web_icons/gray-classic-search-icon.png');
+	background-repeat: no-repeat;
+	float: left;
+	width:16px;
+    height:16px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 5px; 
+    
+   
+}
+.SearchWall
+{
+	width:100%;
+    height:20px;
+    background-color: white;
+    
+    
+
+}
+.inline2
+ {
+ 	float:left;
+ 	font-size: 12px; font-family: 'Signika', sans-serif;
+ 	color: black;
+ 	margin-left: 9px;
+ 	height: 9px;
+ 	
+ 	
+ 	
+
+
+
+
 }
