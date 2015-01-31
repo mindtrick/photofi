@@ -13,7 +13,7 @@
 		 <link rel="stylesheet" href="themes/StyleSheet.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-		<link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+		
         <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
@@ -53,15 +53,75 @@
         </ul> -->
         
         <div class="SearchWall"><div class="SearchIcon"></div><p class="inline2">haliva event</p><!-- <div class="inline2"> --><!-- </div> --></div>
-        <ul data-role="listview"   >
+        <ul data-role="listview" class="swipe-delete" id="wrapper"  >
 
-             <li ><a href="gallery.html" data-ajax="false" class="image1">  <div ></div><div class="inline" > <h2 >Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
+             <li  id="box1" ><a href="gallery.html" data-ajax="false" class="image1">     <div ></div><div class="inline" > <h2 >Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
              <li ><a href="gallery.html" data-ajax="false" class="image2">  <div ></div><div class="inline" > <h2 >Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
              <li ><a href="gallery.html" data-ajax="false"  class="image3">  <div ></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
              <li ><a href="gallery.html" data-ajax="false"  class="image4">  <div ></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
              <li ><a href="gallery.html" data-ajax="false"  class="image5">  <div></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
           
         </ul> 
+
+                <!--<script src='./js/jquery.pull-to-refresh.js'></script>
+                 <script>
+                   $(document).ready(function(){
+                    $('#wrapper').pull_to_refresh({
+                      refresh: function(stoploading){
+                       stoploading();
+                      }
+                    });
+                   });
+                </script> -->
+             <script type="text/javascript">
+            $(function() {
+                function prevent_default(e) {
+                    e.preventDefault();
+                }
+                function disable_scroll() {
+                    $(document).on('touchmove', prevent_default);
+                }
+                function enable_scroll() {
+                    $(document).unbind('touchmove', prevent_default)
+                }
+                var x;
+                $('.swipe-delete li > a')
+                    .on('touchstart', function(e) {
+                        console.log(e.originalEvent.pageX)
+                        $('.swipe-delete li > a.open').css('left', '0px').removeClass('open') // close em all
+                        $(e.currentTarget).addClass('open')
+                        x = e.originalEvent.targetTouches[0].pageX // anchor point
+                    })
+                    .on('touchmove', function(e) {
+                        var change = e.originalEvent.targetTouches[0].pageX - x
+                        change = Math.min(Math.max(-1, change), 1500) // restrict to -100px left, 0px right
+                        e.currentTarget.style.left = change + 'px'
+                        if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
+                    })
+                    .on('touchend', function(e) {
+                        var left = parseInt(e.currentTarget.style.left)
+                        var new_left;
+                        if (left < -35) {
+                            new_left = '-100'
+                        } else if (left > 35) {
+                            new_left = '-100'
+                        } else {
+                            new_left = '-100'
+
+                        }
+                        // e.currentTarget.style.left = new_left
+                        $(e.currentTarget).animate({left: new_left}, 2000)
+                        enable_scroll()
+
+                         e.preventDefault()
+                    $(this).parents('li').slideUp('fast', function() {
+                        $(this).remove()
+                    })
+
+                });
+               
+            });
+            </script>
 
       
 
