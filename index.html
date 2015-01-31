@@ -94,7 +94,7 @@
                     })
                     .on('touchmove', function(e) {
                         var change = e.originalEvent.targetTouches[0].pageX - x
-                        change = Math.min(Math.max(-1, change), 1500) // restrict to -100px left, 0px right
+                        change = Math.min(Math.max(-1500, change), 1500) // restrict to -100px left, 0px right
                         e.currentTarget.style.left = change + 'px'
                         if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
                     })
@@ -102,20 +102,20 @@
                         var left = parseInt(e.currentTarget.style.left)
                         var new_left;
                         if (left < -35) {
-                            new_left = '-100'
+                            new_left = '-1500'
                         } else if (left > 35) {
-                            new_left = '-100'
+                            new_left = '1500'
                         } else {
-                            new_left = '-100'
+                            new_left = '0'
 
                         }
                         // e.currentTarget.style.left = new_left
-                        $(e.currentTarget).animate({left: new_left}, 2000)
-                        enable_scroll()
+                    //     $(e.currentTarget).animate({left: new_left}, 2000)
+                    //     enable_scroll()
 
                          e.preventDefault()
-                    $(this).parents('li').slideUp('fast', function() {
-                        $(this).remove()
+                     $(this).parents('li').slideUp('fast', function() {
+                         $(this).remove()
                     })
 
                 });
