@@ -141,7 +141,7 @@ $(function() {
         })
         .on('touchmove', function(e) {
             var change = e.originalEvent.targetTouches[0].pageX - x
-            change = Math.min(Math.max(-window.innerWidth-100, change), window.innerWidth) // restrict to -100px left, 0px right
+            change = Math.min(Math.max(-window.innerWidth-300, change), window.innerWidth+300) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
         })
