@@ -25,7 +25,7 @@
 
 	<div data-role="page" data-theme="c">
 
-	<div data-role="header"><a href="#" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-nodisc-icon transparentButton">No text</a>
+	<div data-role="header" data-position="fixed" ><a href="#" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-nodisc-icon transparentButton">No text</a>
     <h1>Event</h1>
 
     <a href="addEvent.html" data-ajax="false" class="ui-btn ui-icon-plus  ui-btn-icon-notext ui-corner-all ui-nodisc-icon transparentButton">No text</a>
@@ -54,54 +54,76 @@
         
         <div class="SearchWall"><!-- <div class="SearchIcon"></div><p class="inline2">haliva event</p><!-- <div class="inline2"> --><!-- </div> --></div> 
         <ul data-role="listview"  id="wrapper" class="swipe-delete">
-             <li>
+             <li >
+
                   <div class="behind">
-                        <a href="#" class="ui-btn delete-btn ">Delete</a>
-                  </div>
-                  <a href="gallery.html" data-ajax="false" class="image1">
+                            <a href="#" class="ui-btn delete-btn">Delete</a>
+                            
+                        </div>
+                <a href="gallery.html" data-ajax="false" class="image1">
                   <div class="inline" > 
+
                       <h2 >Broken Bells</h2>
                       <p>Broken Bells</p>
                    </div>
+                  
 
-                 </a>
+                 </a> 
+                 
 
              </li>
               <li>
-                 
-                   <a href="gallery.html" data-ajax="false" class="image2"> 
+               
+                <a href="gallery.html" data-ajax="false" class="image2"> 
                        <div class="inline" >
                             <h2 >Broken Bells</h2>
                             <p>Broken Bells</p>
                         </div>
-                   </a>
-             </li>
-             <li >
+                        
+                   </a> 
                    
-                    <a href="gallery.html" data-ajax="false"  class="image3"> 
-                        <div class="inline"> 
-                             <h2>Broken Bells</h2>
-                             <p>Broken Bells</p>
-                        </div>
-                    </a>
+                   
              </li>
              <li >
-                     
-                     <a href="gallery.html" data-ajax="false"  class="image4">
+               
+
+                     <a href="gallery.html" data-ajax="false"  class="image3">
                         <div class="inline">
                             <h2>Broken Bells</h2>
                             <p>Broken Bells</p>
                         </div>
-                     </a>
+                        
+                     </a> 
+               
              </li>
              <li >
-                     
-                     <a href="gallery.html" data-ajax="false"  class="image5"> 
+                 
+                
+               <a href="gallery.html" data-ajax="false"  class="image4">
+                        <div class="inline">
+                            <h2>Broken Bells</h2>
+                            <p>Broken Bells</p>
+                        </div>
+                        
+                     </a>  
+                      
+                
+                   
+             </li>
+             <li >
+                
+                 
+                 <a href="gallery.html" data-ajax="false"  class="image5"> 
                          <div class="inline"> 
                             <h2>Broken Bells</h2>
                              <p>Broken Bells</p>
                          </div>
-                    </a>
+
+                         
+                    </a>  
+                     
+                   
+
               </li>
           
         </ul> 
@@ -141,19 +163,19 @@ $(function() {
         })
         .on('touchmove', function(e) {
             var change = e.originalEvent.targetTouches[0].pageX - x
-            change = Math.min(Math.max(-window.innerWidth-300, change), window.innerWidth+300) // restrict to -100px left, 0px right
+            change = Math.min(Math.max(-window.innerWidth, change), window.innerWidth) // restrict to -100px left, 0px right
             e.currentTarget.style.left = change + 'px'
             if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
         })
         .on('touchend', function(e) {
             var left = parseInt(e.currentTarget.style.left)
             var new_left;
-            if (left > -window.innerWidth) {
-                new_left = '0'
-            } else if (left < 0) {
-                new_left = 'window.innerWidth'
+            if (left > -100) {
+                new_left = '-1500px'
+            } else if (left < 100) {
+                new_left = '1500px'
             } else {
-                new_left = 'window.innerWidth'
+                new_left = '0px'
             }
             // e.currentTarget.style.left = new_left
             $(e.currentTarget).animate({left: new_left}, 200)
