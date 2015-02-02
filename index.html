@@ -192,7 +192,7 @@ $(function() {
             $(e.currentTarget).animate({left: new_left}, 200)
             enable_scroll()
         });
-    $('li .delete-btn').on('touchend', function(e) {
+    $('li .delete-btn').on('tap', function(e) {
         e.preventDefault()
         $(this).parents('li').slideUp('fast', function() {
             $(this).remove()
