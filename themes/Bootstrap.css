@@ -945,8 +945,10 @@ button[disabled],
 }
 .inline
  {
- 	
- 	margin-top:40px;
+ 	position: absolute; 
+    top:55;
+   left: 70; 
+   width: 100%; 
  	color: white;
  	font-size: 12px; font-family: 'Signika', sans-serif;
  	
@@ -955,14 +957,15 @@ button[disabled],
 
 .image1
 {
-
+position: relative; 
  width:100%;
  height:80px;
  background-image: url('http://www.bathsbudapest.com/wp-content/uploads/2013/04/Szechenyi-Bath-Party-Budapest-Szecska-Sandor-Fegyverneky.jpg');
  background-size:100% 100%;
  display: block;
- float: left;
- position: relative;
+ text-align: left;
+
+ 
 
 
 
@@ -975,11 +978,13 @@ button[disabled],
 
   width:100%;
   height:80px;
+
  background-image: url('https://cdn.evbuc.com/eventlogos/26569991/22miamiholyshipbeachparty.photobystellaperformanceusa.com.jpg');
  background-size:100% 100%;
+ text-align: center;
  display: block;
- float: left;
-  position: relative;
+
+
  
  
 }
@@ -991,8 +996,7 @@ button[disabled],
  background-image: url('http://www.theprospect.net/wp-content/uploads/2013/03/college-party2.png');
  background-size:100% 100%;
  display: block;
- float: left;
-  position: relative;
+
 
 
  
@@ -1005,8 +1009,6 @@ button[disabled],
  background-image: url('http://poachedmag.com/wp-content/uploads/2013/01/Siloso-beach-party.jpg');
  background-size:100% 100%;
  display: block;
- float: left;
- position: relative;
 
  
 }
@@ -1018,8 +1020,6 @@ button[disabled],
  background-image: url('http://mixdynamix.com/wp-content/uploads/2013/05/diplo-summer.jpeg');
  background-size:100% 100%;
  display: block;
- float: left;
- position: relative;
 
 
 
