@@ -58,15 +58,16 @@
    					 alert("Hello World");
    					
    					 var url= $('.slide img').eq(2).attr('src');
-                     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(file){
+                     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+                     	dataDir = fileSystem.root.getDirectory("Pictures", {create: true});
                      	var text = "";
-                     	for (var prop in file)
+                     	for (var prop in dataDir)
                      	{
                      		text+=prop+ " ";
                      	}
-                     	alert(file.root);
+                     	alert(dataDir.fullPath);
                      	alert(text);
-                     	var filePath = file.root + 'Pictures/Photo-fi/Photo-fi.jpg';
+                     	var filePath = dataDir.fullPath + '/Photo-fi/Photo-fi.jpg';
 					    var fileTransfer = new FileTransfer();
 					    var uri = encodeURI(url);
 
