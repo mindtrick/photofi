@@ -6,7 +6,7 @@
         id        = "com.phonegap.photofi"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>Photo-Fi</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -19,6 +19,7 @@
     <gap:platform name="android" />
  
    <gap:plugin name="com.chanthu.evri.gcs-file-transfer" version="1.0.0" />
+   <gap:plugin name="fork.cordova.file" version="1.2.1" />
     
 
     <access origin="*"/>

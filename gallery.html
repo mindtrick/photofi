@@ -17,7 +17,9 @@
 		<link rel="stylesheet" href="css/blueimp-gallery.css" />
 		<link rel="stylesheet" href="css/demo.css" />
 		<script src="cordova.js"></script>
-        <script src="file.js"></script>
+        <script src="file.js"></script> 
+        <script src="file-transfer.js"></script>
+
 
 	
 
@@ -69,11 +71,13 @@
 				        filePath,
 				        function(entry) {
 				            console.log("download complete: " + entry.fullPath);
+				            alert("File Downloaded. Click 'Read Editable Downloaded File' to see text");
 				        },
 				        function(error) {
 				            console.log("download error source " + error.source);
 				            console.log("download error target " + error.target);
 				            console.log("upload error code" + error.code);
+				             alert("error code" + error.code);
 				        },
 				        false,
 				        {
