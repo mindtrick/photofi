@@ -59,10 +59,9 @@
    					
    					 var url= $('.slide img').eq(2).attr('src');
                         
-                    alert("source of image with alternate text = example - " + url);
-   					
+                    alert(LocalFileSystem.PERSISTENT);
 					
-				    var filePath = '/storage/sdcard0/Pictures/Photo-fi/Photo-fi.jpg';
+				    var filePath = LocalFileSystem.PERSISTENT + 'Pictures/Photo-fi/Photo-fi.jpg';
 				    var fileTransfer = new FileTransfer();
 				    var uri = encodeURI(url);
 
