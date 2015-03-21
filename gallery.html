@@ -59,9 +59,9 @@
    					
    					 var url= $('.slide img').eq(2).attr('src');
                         
-                    alert(LocalFileSystem.PERSISTENT);
+                    alert(window.LocalFileSystem.PERSISTENT);
 					
-				    var filePath = LocalFileSystem.PERSISTENT + 'Pictures/Photo-fi/Photo-fi.jpg';
+				    var filePath = window.LocalFileSystem.PERSISTENT + 'Pictures/Photo-fi/Photo-fi.jpg';
 				    var fileTransfer = new FileTransfer();
 				    var uri = encodeURI(url);
 
