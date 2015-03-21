@@ -149,13 +149,24 @@
   text-decoration: none;
   cursor: pointer;
 }
+.blueimp-gallery > .download
+{
+  position: absolute;
+  top:23px;
+  left: 15px;
+  
+ cursor: pointer;
+ 
+  display: none;
+}
 .blueimp-gallery > .share {
   position: absolute;
-  bottom:35px;
+  bottom:23px;
   left: 15px;
   margin: 0 40px 0 0;
+ cursor: pointer;
+ 
   display: none;
-  cursor: pointer;
 }
 
 .blueimp-gallery > .play-pause {
@@ -185,6 +196,7 @@
 .blueimp-gallery-controls > .next,
 .blueimp-gallery-controls > .close,
 .blueimp-gallery-controls > .share,
+.blueimp-gallery-controls > .download,
 .blueimp-gallery-controls > .title,
 .blueimp-gallery-controls > .play-pause {
   display: block;
@@ -238,10 +250,42 @@ body:last-child .blueimp-gallery-playing > .play-pause {
 }
 
 
-.ui-navbar
+.animate
 {
-  position:fixed;
-  top: 0;
-  width: 100%;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
 }
 
+.action-button
+{
+  position: relative;
+  padding: 5px 10px;
+  margin: 0px 5px 5px 0px;
+  float: left;
+  border-radius: 5px;
+  font-family: 'Pacifico', cursive;
+  font-size: 15px;
+  color: #FFF;
+  text-decoration: none;  
+}
+
+.blue
+{
+  background-color: #3498DB;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+}
+.yellow
+{
+  background-color: #F2CF66;
+  border-bottom: 5px solid #D1B358;
+  text-shadow: 0px -2px #D1B358;
+}
+
+
+.action-button:active
+{
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}

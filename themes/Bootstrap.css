@@ -916,6 +916,8 @@ button[disabled],
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+/*list events page*/
+
 .addeventIcon
 {
 	
@@ -946,144 +948,40 @@ button[disabled],
 .inline
  {
  	position: absolute; 
-    top:55;
-   left: 70; 
-   width: 100%; 
+    top:60;
+    left: 25; 
+    width: 100%; 
  	color: white;
- 	font-size: 12px; font-family: 'Signika', sans-serif;
+ 	font-size: 15px; font-family: 'Signika', sans-serif;
  	
 
 }
-
-.image1
+/*.changePhoto
 {
-position: relative; 
+	width:100%/1.5;
+    height:90px;
+
+}*/
+
+.image
+{
+ position: relative; 
  width:100%;
- height:80px;
- background-image: url('http://www.bathsbudapest.com/wp-content/uploads/2013/04/Szechenyi-Bath-Party-Budapest-Szecska-Sandor-Fegyverneky.jpg');
+ height:119px;
+ background-image: url('http://entertainmentfornow.com/wp-content/uploads/2015/02/college-party.png');
  background-size:100% 100%;
  display: block;
+ margin-bottom: 1px;
  text-align: left;
 
- 
-
-
-
-
- 
- 
 }
-.image2
-{
-
-  width:100%;
-  height:80px;
-
- background-image: url('https://cdn.evbuc.com/eventlogos/26569991/22miamiholyshipbeachparty.photobystellaperformanceusa.com.jpg');
- background-size:100% 100%;
- text-align: center;
- display: block;
-
-
- 
- 
-}
-.image3
-{
-
-  width:100%;
-  height:80px;
- background-image: url('http://www.theprospect.net/wp-content/uploads/2013/03/college-party2.png');
- background-size:100% 100%;
- display: block;
-
-
-
- 
-}
-.image4
-{
-
-  width:100%;
-  height:80px;
- background-image: url('http://poachedmag.com/wp-content/uploads/2013/01/Siloso-beach-party.jpg');
- background-size:100% 100%;
- display: block;
-
- 
-}
-.image5
-{
-
-  width:100%;
-  height:80px;
- background-image: url('http://mixdynamix.com/wp-content/uploads/2013/05/diplo-summer.jpeg');
- background-size:100% 100%;
- display: block;
 
 
 
 
- 
-}
-.SearchIcon
-{
-	
-	background-image: url('http://www.dreamtemplate.com/dreamcodes/web_icons/gray-classic-search-icon.png');
-	background-repeat: no-repeat;
-	float: left;
-	width:16px;
-    height:16px;
-    position: relative;
-    margin-top: 10px;
-    margin-left: 5px; 
-    
-   
-}
-.SearchWall
-{
-	width:100%;
-    height:20px;
-    background-color: white;
-    position: relative;
-    
-    
-
-}
-.inline2
- {
- 	float:left;
- 	font-size: 12px; font-family: 'Signika', sans-serif;
- 	color: black;
- 	margin-left: 9px;
- 	height: 9px;
- 	
- 	
-}
-#wrapper {
-   }
-
-#pull_to_refresh {
-  
-  
-  text-align: right;
-
-  background-image: url(../img/arrow.png);
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position: 200px 0;
-  
-}
-  #pull_to_refresh.visible {
-    background-image: url(../img/arrow_up.png);
-    background-size: 16px 16px;
-    background-position: 200px 0; }
-  #pull_to_refresh.refresh {
-    background-image: url(../img/spinner.gif);
-    background-size: 16px 16px;
-    background-position: 200px center; }
 
 
+/*add  event page*/
 .colortext 
 {
 	width: 85%;
@@ -1143,3 +1041,35 @@ position: relative;
 	text-align: left;
 	color:black;
 }
+/*delete button list events*/
+.behind {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        top: 0;
+        right: 0;
+    }
+    .behind a.ui-btn {
+       
+        width:68px;
+        height: 81px;
+        margin:0px;
+        float: right;
+        border: none;
+        position: static;
+    }
+    .behind a.delete-btn, .behind a.delete-btn:active, .behind a.delete-btn:visited, .behind a.delete-btn:focus, .behind a.delete-btn:hover {
+        color: white;
+        background-color:#006699;
+      
+        text-shadow: none;
+    }
+    .behind a.ui-btn.pull-left {
+        float: left;
+    }
+    .behind a.edit-btn, .behind a.edit-btn:active, .behind a.edit-btn:visited, .behind a.edit-btn:focus, .behind a.edit-btn:hover {
+        color: white;
+        background-color: orange;
+        text-shadow: none;
+    }

@@ -34,25 +34,12 @@ img {
 h1 {
   line-height: 1em;
 }
-
+h2,
 .links {
-   
- 
-     line-height: 100%;
-     width: 100%;
-  -webkit-column-count: width/100;
-  -webkit-column-gap:   1px;
   text-align: center;
-  height: 100%;
- 
-  
-  
-  
-
-  
-  
-  
 }
+
+
 
 @media (min-width: 481px) {
   .navigation {

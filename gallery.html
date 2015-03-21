@@ -8,16 +8,17 @@
 		<meta charset="utf-8" />
 
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
-		<script type='application/javascript' src='js//fastclick.js'></script>
+		
 		<title>jQuery Mobile Bootstrap Theme</title>
 		<link rel="stylesheet" href="themes/Bootstrap.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="themes/StyleSheet.css" />
 		<link rel="stylesheet" href="css/blueimp-gallery.css" />
 		<link rel="stylesheet" href="css/demo.css" />
-		
+		<script src="cordova.js"></script>
+        <script src="barcodescanner.js"></script>
+	
 
 	</head>
 	
@@ -27,7 +28,7 @@
 
 		   <div data-role="header"><a href="index.html"  data-ajax="false" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all ui-nodisc-icon transparentButton">No text</a>
 		    <h1>image gallery</h1>
-		    <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all ui-nodisc-icon transparentButton">No text</a>
+		   
       		</div>
 	       <!--  <div data-role="navbar">
 				<ul>
@@ -44,11 +45,48 @@
 			<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
 			<div id="blueimp-gallery" class="blueimp-gallery">
 			    <div class="slides"></div>
-			    <h3 class="title"></h3>
+			    <!-- <h3 class="title"></h3> -->
 			    <a class="prev">‹</a>
+			     <a id="save"class="download"><div class="action-button shadow animate blue">download</div></a>
+			     
+			     <script>
+					document.getElementById("save").addEventListener('click', function()
+					{
+   					 alert("Hello World");
+   					
+   					 var url= $('.slides img').attr('src');
+                        
+                    alert("source of image with alternate text = example - " + url);
+   					
+					
+				    var filePath = '/android/images';
+				    var fileTransfer = new FileTransfer();
+				    var uri = encodeURI(url);
+
+				    fileTransfer.download(
+				        uri,
+				        filePath,
+				        function(entry) {
+				            console.log("download complete: " + entry.fullPath);
+				        },
+				        function(error) {
+				            console.log("download error source " + error.source);
+				            console.log("download error target " + error.target);
+				            console.log("upload error code" + error.code);
+				        },
+				        false,
+				        {
+				            headers: {
+				                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+				            }
+				        }
+				    );
+
+				});
+				</script>
 			    <a class="next">›</a>
 			    <a class="close">×</a>
-			    <a class="share"><div class='share-button'></div></a>
+			    <a class="share"><div class="share-button"></div></a>
 			    
 
 

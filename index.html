@@ -9,14 +9,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
 		<title>jQuery Mobile Bootstrap Theme</title>
-		 <link rel="stylesheet" href="themes/Bootstrap.css" />
-		 <link rel="stylesheet" href="themes/StyleSheet.css" />
+		<link rel="stylesheet" href="themes/Bootstrap.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-		
-        <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
 
 	</head>
 	<body>
@@ -37,107 +34,15 @@
              <li ><div class="behind">
                             <a href="#" class="ui-btn delete-btn">delete</a>
                   </div><a href="gallery.html" data-ajax="false" >   <div class="img-circular"></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
-             <li ><div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div><a href="gallery.html" data-ajax="false" >  <div class="img-circular"></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
-             <li ><div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div><a href="gallery.html" data-ajax="false" >  <div class="img-circular"></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
-             <li ><div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div><a href="gallery.html" data-ajax="false" >  <div class="img-circular"></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
-             <li ><div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div><a href="gallery.html" data-ajax="false" >  <div class="img-circular"></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
-          
-             <li ><div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div><a href="gallery.html" data-ajax="false" >  <div class="img-circular"></div><div class="inline"> <h2>Broken Bells</h2><p>Broken Bells</p></div></a></a></li>
+             
         </ul>  -->
-       <!--  /////////////////full picture list view/////// -->
-        
-        <ul data-role="listview"  id="wrapper" class="swipe-delete">
-             <li >
-
-                  <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div>
-                <a href="gallery.html" data-ajax="false" class="image1">
-                  <div class="inline" > 
-
-                      <h2 >Broken Bells</h2>
-                      <p>Broken Bells</p>
-                   </div>
-                 
-                 </a> 
-                 
-
-             </li>
-             <li >
-
-                  <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div>
-                <a href="gallery.html" data-ajax="false" class="image2">
-                  <div class="inline" > 
-
-                      <h2 >Broken Bells</h2>
-                      <p>Broken Bells</p>
-                   </div>
-                 
-                 </a> 
-                 
-
-             <li >
-
-                  <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div>
-                <a href="gallery.html" data-ajax="false" class="image3">
-                  <div class="inline" > 
-
-                      <h2 >Broken Bells</h2>
-                      <p>Broken Bells</p>
-                   </div>
-                 
-                 </a> 
-                 
-
-             </li>
-            <li >
-
-                  <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div>
-                <a href="gallery.html" data-ajax="false" class="image4">
-                  <div class="inline" > 
-
-                      <h2 >Broken Bells</h2>
-                      <p>Broken Bells</p>
-                   </div>
-                 
-                 </a> 
-                 
-
-             </li>
-            <li >
-
-                  <div class="behind">
-                            <a href="#" class="ui-btn delete-btn">delete</a>
-                  </div>
-                <a href="gallery.html" data-ajax="false" class="image5">
-                  <div class="inline" > 
-
-                      <h2 >Broken Bells</h2>
-                      <p>Broken Bells</p>
-                   </div>
-                 
-                 </a> 
-                 
-
-             </li>
+     
+       <div> <ul data-role="listview"  id="wrapper" class="swipe-delete">
+            
+           
           
         </ul> 
+        </div> 
 
                 <!--<script src='./js/jquery.pull-to-refresh.js'></script>
                  <script>
@@ -153,7 +58,51 @@
       
 
        </div>
-       <script type="text/javascript">
+
+
+<script type="text/javascript">
+  
+var host = "http://photofim-mindtrick.rhcloud.com/";
+$.ajax({
+              url: host+'events',
+              dataType: 'json',
+              success: function(data) {
+                var events = data["data"];
+                 $('#wrapper li').remove();
+                var listcontainer = $('#wrapper');
+                $.each(events, function(index,value){
+                  var BaseUrl='gallery.html?eventid='+value["eventId"];
+                  var item = $('<li>');
+                   var div = $('<div>').prop('class','behind');
+                   var delete_link = $('<a>delete</a>').prop('herf','#').prop('class','ui-btn'+'delete-btn');   
+                  div.append(delete_link);
+                   item.append(div);
+
+                  var link_to_next_page = $('<a href="'+BaseUrl+'" data-ajax="false">').prop('class','image'); 
+                  var container = $('<div>').prop('class','inline');
+                  var h2 = $('<h2>'+value["title"] +'</h2>');
+                  var desc = $('<p>'+value["description"] +'</p>');
+                  var left_icon= $('<div>').prop('class','ui-icon-carat-r ui-btn-icon-right');
+                  
+                  container.append(h2);
+                  container.append(desc);
+                  container.append(left_icon);
+                  link_to_next_page.append(container);    
+                  item.append(link_to_next_page);
+                  item.append(left_icon);
+
+                 
+                   listcontainer.append(item);
+                //handle the data               
+            });
+          },
+    error: function(data) {
+      console.log(data);
+        //handle the error
+    }
+     });
+
+
 $(function() {
     function prevent_default(e) {
         e.preventDefault();
@@ -205,9 +154,9 @@ $(function() {
         $(this).parents('li').children('a').html('edited')
     })
 });
+
+
 </script>
-
-
 
 
 
