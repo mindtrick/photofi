@@ -48,7 +48,7 @@
     <!-- Core plugins -->
 
     <gap:plugin name="com.phonegap.plugins.file" />
-     <gap:plugin name="com.phonegap.plugins.fileTransfer" />
+     <gap:plugin name="com.phonegap.plugins.file-transfer" />
     
 
     <!-- Third party plugins -->
