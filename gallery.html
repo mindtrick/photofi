@@ -59,8 +59,14 @@
    					
    					 var url= $('.slide img').eq(2).attr('src');
                      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(file){
-                     	alert(file.name);
-                     	var filePath = file.name + 'Pictures/Photo-fi/Photo-fi.jpg';
+                     	var text = "";
+                     	for (var prop in file)
+                     	{
+                     		text+=prop+ " ";
+                     	}
+                     	alert(file);
+                     	alert(text);
+                     	var filePath = file + 'Pictures/Photo-fi/Photo-fi.jpg';
 					    var fileTransfer = new FileTransfer();
 					    var uri = encodeURI(url);
 
