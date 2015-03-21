@@ -60,8 +60,8 @@
    					 var url= $('.slide img').eq(2).attr('src');
                      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 
-                     	alert(fileSystem.root.toURI);
-                     	var filePath = fileSystem.root.toURI + '/Pictures/Photo-fi/Photo-fi.jpg';
+                     	alert(fileSystem.root.toURI());
+                     	var filePath = fileSystem.root.toURI() + '/Pictures/Photo-fi/Photo-fi.jpg';
 					    var fileTransfer = new FileTransfer();
 					    var uri = encodeURI(url);
 
