@@ -58,33 +58,36 @@
    					 alert("Hello World");
    					
    					 var url= $('.slide img').eq(2).attr('src');
-                        
-                    alert(window.LocalFileSystem.PERSISTENT);
-					
-				    var filePath = window.LocalFileSystem.PERSISTENT + 'Pictures/Photo-fi/Photo-fi.jpg';
-				    var fileTransfer = new FileTransfer();
-				    var uri = encodeURI(url);
+                     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(file){
+                     	alert(file.name);
+                     	var filePath = file.name + 'Pictures/Photo-fi/Photo-fi.jpg';
+					    var fileTransfer = new FileTransfer();
+					    var uri = encodeURI(url);
 
-				    fileTransfer.download(
-				        uri,
-				        filePath,
-				        function(entry) {
-				            console.log("download complete: " + entry.fullPath);
-				            alert("File Downloaded. Click 'Read Editable Downloaded File' to see text");
-				        },
-				        function(error) {
-				            console.log("download error source " + error.source);
-				            console.log("download error target " + error.target);
-				            console.log("upload error code" + error.code);
-				             alert("error code" + error.code);
-				        },
-				        false,
-				        {
-				            headers: {
-				                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-				            }
-				        }
-				    );
+					    fileTransfer.download(
+					        uri,
+					        filePath,
+					        function(entry) {
+					            console.log("download complete: " + entry.fullPath);
+					            alert("File Downloaded. Click 'Read Editable Downloaded File' to see text");
+					        },
+					        function(error) {
+					            console.log("download error source " + error.source);
+					            console.log("download error target " + error.target);
+					            console.log("upload error code" + error.code);
+					             alert("error code" + error.code);
+					        },
+					        false,
+					        {
+					            headers: {
+					                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+					            }
+					        }
+					    );
+                     });
+                    
+					
+				    
 
 				});
 				</script>
