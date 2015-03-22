@@ -927,8 +927,11 @@ button[disabled],
 	display:inline;
 	position: absolute;
 }
-.img-circular{
- 
+.img-circular
+{
+	position: absolute;
+	 left:20;
+	 top:20;
  width:60px;
  height:60px;
  background-image: url('https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10458552_912691392080585_4488318092612700422_n.jpg?oh=456cdc733b08588511d55f3c0401ce36&oe=5525A2EC&__gda__=1429068884_a7373ee0b3ab4d60a6e5098f4505d31b');
@@ -941,18 +944,20 @@ button[disabled],
  -webkit-border-top-right-radius: 100px;
  -webkit-border-bottom-left-radius: 100px;
  border-bottom-right-radius: 100px;
- 
+ text-align: left;
   -moz-border-top-left-radius: 100px;
   -moz-border-bottom-right-radius: 100px;
 }
 .inline
  {
  	position: absolute; 
-    top:60;
-    left: 25; 
+    margin-left: 70px;
     width: 100%; 
- 	color: white;
+ 	color: black;
  	font-size: 15px; font-family: 'Signika', sans-serif;
+ 	float: left;
+ 	text-align: left;
+ 	display: inline-block;
  	
 
 }
@@ -1073,3 +1078,16 @@ button[disabled],
         background-color: orange;
         text-shadow: none;
     }
+    .divlist
+    {
+    	width: 100%;
+    	height: 100px;
+    }
+    li:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    
+    background: #00a99e;
+}

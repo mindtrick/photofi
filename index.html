@@ -72,13 +72,13 @@ $.ajax({
                 var listcontainer = $('#wrapper');
                 $.each(events, function(index,value){
                   var BaseUrl='gallery.html?eventid='+value["eventId"];
-                  var item = $('<li>');
+                  var item = $('<li>').prop('class','divlist');
                   //  var div = $('<div>').prop('class','behind');
                   //  var delete_link = $('<a>delete</a>').prop('herf','#').prop('class','ui-btn'+'delete-btn');   
                   // div.append(delete_link);
                   //  item.append(div);
 
-                  var link_to_next_page = $('<a href="'+BaseUrl+'" data-ajax="false">').prop('class','image'); 
+                  var link_to_next_page = $('<a href="'+BaseUrl+'" data-ajax="false">').prop('class','img-circular'); 
                   var container = $('<div>').prop('class','inline');
                   var h2 = $('<h2>'+value["title"] +'</h2>');
                   var desc = $('<p>'+value["description"] +'</p>');
