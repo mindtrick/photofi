@@ -103,112 +103,46 @@
 				    
 
 				});
+				
+
+
 				</script>
 			    <a class="next">›</a>
 			    <a class="close">×</a>
-			    <a class="share"><div class="action-button shadow animate yellow">share</div><!-- <div class="share-button"></div> --></a>
+			    <a id="shaare" class="share"><div class="action-button shadow animate yellow">share</div>
 			    <script>
 
-				var exec = require('cordova/exec');
-				var hasCheckedInstall,
-				    isAppInstalled;
+			    document.getElementById("shaare").addEventListener('click', function()
+				{
 
-				function shareDataUrl(dataUrl, caption, callback)
-				 {
-				  var imageData = dataUrl.replace(/data:image\/(png|jpeg);base64,/, "");
-
-				  exec(function () {
-				    callback && callback(null, true);
-				  },
-
-				  function (err) {
-				    callback && callback(err);
-				  }, "Instagram", "share", [imageData, caption]);
-				}
-
-				var Plugin = {
-				  // calls to see if the device has the Instagram app
-				  isInstalled: function (callback) {
-				    exec(function (version) {
-				      hasCheckedInstall = true;
-				      isAppInstalled = true;
-				      callback && callback(null, version ? version : true);
-				    },
-
-				    function () {
-				      hasCheckedInstall = true;
-				      isAppInstalled = false;
-				      callback && callback(null, false);
-				    }, "Instagram", "isInstalled", []);
-				  },
-				  share: function () {
-				    var data,
-				        caption,
-				        callback;
-				    
-				    switch(arguments.length) {
-				    case 2:
-				      data = arguments[0];
-				      caption = '';
-				      callback = arguments[1];
-				      break;
-				    case 3:
-				      data = arguments[0];
-				      caption = arguments[1];
-				      callback = arguments[2];
-				      break;
-				    default:
-				    }
-				    
-				    // sanity check 
-				    if (hasCheckedInstall && !isAppInstalled) {
-				      console.log("oops, Instagram is not installed ... ");
-				      alert("oops, Instagram is not installed ... ");
-				      return callback && callback("oops, Instagram is not installed ... ");
-				    }
-
-				    var canvas = document.getElementById(data),
-				        magic = "data:image";
-				    
-				    if (canvas) {
-				      shareDataUrl(canvas.toDataURL(), caption, callback);
-				    }
-				    else if (data.slice(0, magic.length) == magic) {
-				      shareDataUrl(data, caption, callback);
-				    }
-				  }
-				};
-
-				module.exports = Plugin;
-				document.getElementById("share").addEventListener('click', function()
+					alert("insta");
+					Instagram.isInstalled(function (err, installed) 
 					{
-				Instagram.isInstalled(function (err, installed)
-				 {
-				    if (installed)
-				     {
-				        console.log("Instagram is", installed); // installed app version on Android
-				        alert("Instagram is installed");
-				    } else 
-				    {
-				        console.log("Instagram is not installed");
-				        alert("Instagram is not installed");
-				    }
+					    if (installed) {
+					        console.log("Instagram is", installed);
+					        alert("Instagram is installed"); // installed app version on Android
+					    } else {
+					        console.log("Instagram is not installed");
+					        alert("Instagram is not installed");
+					    }
+					});
+					 var DataUrl=$('.slide img').eq(2).attr('src');
+					Instagram.share(canvasIdOrDataUrl, function (err) 
+					{
+						if (err) {
+						 console.log("not shared");
+						 alert("not shared");
+						     }
+						else {
+						        console.log("shared");
+						        alert("shared");
+						}
+					});
+
+
 				});
-				Instagram.share(canvasIdOrDataUrl, function (err)
-				 {
-				    if (err) 
-				    {
-				        console.log("not shared");
-				        alert("not shared");
-				    } else 
-				    {
-				        console.log("shared");
-				        alert("shared");
-				    }
-				});
-			}
-			    </script>
-			    
+					</script>
+
 
 
 			    <a class="play-pause"></a>
