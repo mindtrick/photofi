@@ -53,6 +53,17 @@
 			     <a id="save"class="download"><div class="action-button shadow animate blue">download</div></a>
 			     
 			     <script>
+					function guid() 
+					{
+					  function s4()
+					  {
+					    return Math.floor((1 + Math.random()) * 0x10000)
+					      .toString(16)
+					      .substring(1);
+					  }
+					  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+					    s4() + '-' + s4() + s4() + s4();
+					}
 					document.getElementById("save").addEventListener('click', function()
 					{
    					 alert("Hello World");
@@ -61,7 +72,7 @@
                      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
 
                      	alert(fileSystem.root.toURI());
-                     	var filePath = fileSystem.root.toURI() + '/Pictures/Photo-fi/Photo-fi.jpg';
+                     	var filePath = fileSystem.root.toURI() + '/Pictures/Photo-fi/'+ guid()+'.jpg';
 					    var fileTransfer = new FileTransfer();
 					    var uri = encodeURI(url);
 
