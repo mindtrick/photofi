@@ -591,26 +591,31 @@ html .ui-panel-page-container-c {
 html .ui-bar-c a,
 html .ui-body-c a,
 html body .ui-group-theme-c a {
-	color: #FFFFFF /*{c-link-color}*/;
+	color: #FFFFFF;
+	/*color: #3388cc /*{c-link-color}*/;*/
 	font-weight: bold;
 }
 .ui-page-theme-c a:visited,
 html .ui-bar-c a:visited,
 html .ui-body-c a:visited,
 html body .ui-group-theme-c a:visited {
-    color: #FFFFFF /*{c-link-visited}*/;
+    color: #FFFFFF;
+    /*color: #3388cc /*{c-link-visited}*/;*/
 }
 .ui-page-theme-c a:hover,
 html .ui-bar-c a:hover,
 html .ui-body-c a:hover,
 html body .ui-group-theme-c a:hover {
-	color: #FFFFFF /*{c-link-hover}*/;
+	color: #FFFFFF;
+	/*color: #005599 /*{c-link-hover}*/;*/
 }
 .ui-page-theme-c a:active,
 html .ui-bar-c a:active,
 html .ui-body-c a:active,
 html body .ui-group-theme-c a:active {
-	color:#FFFFFF /*{c-link-active}*/;
+	
+	color: #FFFFFF;
+	/*color: #005599 /*{c-link-active}*/;*/
 }
 /* Button up */
 .ui-page-theme-c .ui-btn,
