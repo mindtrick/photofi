@@ -130,29 +130,7 @@
 					        alert("Instagram is not installed");
 					    }
 					});
-					Instagram.
-// 					function getBase64FromImageUrl(URL) {
-//     var img = new Image();
-//     img.src = URL;
-//     img.onload = function () {
-
-
-//     var canvas = document.createElement("canvas");
-//     canvas.width =this.width;
-//     canvas.height =this.height;
-
-//     var ctx = canvas.getContext("2d");
-//     ctx.drawImage(this, 0, 0);
-
-
-//     var dataURL = canvas.toDataURL("image/png");
-//     alert( dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
-
-//    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
- 
-
-//     }
-// };
+	
 					var DataUrl= $('.slide img').eq(2).attr('src');
 					Instagram.share(canvasIdOrDataUrl, function (err) 
 					{
@@ -173,18 +151,16 @@
 			    document.getElementById("whatsapp").addEventListener('click', function()
 				{
 					alert("whatsapp");
-					
-					var exec = require('cordova/exec');
-					var Whatsapp = {
-					    send: function(send_to, successCB, errorCB) {
-					        console.warn("Sending whatsapp : " + send_to);
-					        alert("Sending whatsapp : ");
-					        exec(successCB, errorCB, "Whatsapp", "send", [send_to]);
-					    }
-					};
-
-					module.exports = Whatsapp;
-					whatsapp.send(0545529212,"send","error");
+					var url = $('.slide img').eq(2).attr('src');
+					window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, url /* url */,
+					 function()
+					 {
+					 	console.log('share ok');
+					 },
+					  function(errormsg)
+					  {
+					  	alert(errormsg);
+					  });
 				});
 					</script>
 
