@@ -126,7 +126,28 @@
 					        alert("Instagram is not installed");
 					    }
 					});
-					 var DataUrl=$('.slide img').eq(2).attr('src');
+					function getBase64FromImageUrl(URL) {
+    var img = new Image();
+    img.src = URL;
+    img.onload = function () {
+
+
+    var canvas = document.createElement("canvas");
+    canvas.width =this.width;
+    canvas.height =this.height;
+
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(this, 0, 0);
+
+
+    var dataURL = canvas.toDataURL("image/png");
+
+    alert(  dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
+
+    }
+}
+					 var DataUrl= getBase64FromImageUrl($('.slide img').eq(2).attr('src'));
 					Instagram.share(DataUrl, function (err) 
 					{
 						if (err) {
