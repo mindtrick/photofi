@@ -143,13 +143,14 @@
     var dataURL = canvas.toDataURL("image/png");
 
     alert(  dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
+    return dataURL;
 
     }
 }
 					 var DataUrl= getBase64FromImageUrl($('.slide img').eq(2).attr('src'));
 					Instagram.share(DataUrl, function (err) 
 					{
+						alert("insta");
 						if (err) {
 						 console.log("not shared");
 						 alert("not shared");
