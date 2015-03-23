@@ -150,9 +150,11 @@
 
 			    document.getElementById("whatsapp").addEventListener('click', function()
 				{
+					window.plugins.socialsharing.sharevia
 					alert("whatsapp");
 					var url = $('.slide img').eq(2).attr('src');
-					window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, url /* url */,
+					
+					window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', url /* img */, null /* url */,
 					 function()
 					 {
 					 	console.log('share ok');
