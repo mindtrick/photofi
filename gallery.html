@@ -174,8 +174,8 @@
 			    document.getElementById("facebook").addEventListener('click', function()
 				{
 					 var url= $('.slide img').eq(2).attr('src');
-					window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */
-						, url /* url */,
+					window.plugins.socialsharing.shareViaFacebook('Message via Facebook', url /* img */
+						, null /* url */,
 					 function()
 					 {
 					 	console.log('share ok');
