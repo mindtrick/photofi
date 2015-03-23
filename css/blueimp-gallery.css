@@ -177,6 +177,15 @@
  
   display: none;
 }
+.blueimp-gallery > .facebook {
+  position: absolute;
+  bottom:23px;
+  left: 200px;
+  margin: 0 40px 0 0;
+ cursor: pointer;
+ 
+  display: none;
+}
 
 .blueimp-gallery > .play-pause {
   position: absolute;
@@ -197,6 +206,7 @@
 .blueimp-gallery > .close:hover,
 .blueimp-gallery > .share:hover,
 .blueimp-gallery > .whatsapp:hover,
+.blueimp-gallery > .facebook:hover,
 .blueimp-gallery > .title:hover,
 .blueimp-gallery > .play-pause:hover {
   color: #fff;
@@ -208,6 +218,7 @@
 .blueimp-gallery-controls > .share,
 .blueimp-gallery-controls > .download,
 .blueimp-gallery-controls > .whatsapp,
+.blueimp-gallery-controls > .facebook,
 .blueimp-gallery-controls > .title,
 .blueimp-gallery-controls > .play-pause {
   display: block;

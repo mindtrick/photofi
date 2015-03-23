@@ -128,29 +128,31 @@
 					        alert("Instagram is not installed");
 					    }
 					});
-					function getBase64FromImageUrl(URL) {
-    var img = new Image();
-    img.src = URL;
-    img.onload = function () {
+					Instagram.
+// 					function getBase64FromImageUrl(URL) {
+//     var img = new Image();
+//     img.src = URL;
+//     img.onload = function () {
 
 
-    var canvas = document.createElement("canvas");
-    canvas.width =this.width;
-    canvas.height =this.height;
+//     var canvas = document.createElement("canvas");
+//     canvas.width =this.width;
+//     canvas.height =this.height;
 
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(this, 0, 0);
+//     var ctx = canvas.getContext("2d");
+//     ctx.drawImage(this, 0, 0);
 
 
-    var dataURL = canvas.toDataURL("image/png");
+//     var dataURL = canvas.toDataURL("image/png");
+//     alert( dataURL.replace(/^data:image\/(png|jpg);base64,/, ""));
 
-   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+//    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "")
  
 
-    }
-};
-					 var DataUrl= getBase64FromImageUrl($('.slide img').eq(2).attr('src'));
-					Instagram.share(DataUrl, function (err) 
+//     }
+// };
+					var DataUrl= $('.slide img').eq(2).attr('src');
+					Instagram.share(canvasIdOrDataUrl, function (err) 
 					{
 						alert("insta");
 						if (err) {
@@ -181,12 +183,31 @@
 
 					module.exports = Whatsapp;
 					whatsapp.send(0545529212,"send","error");
-									});
+				});
 					</script>
 
 
 
 			    <a class="play-pause"></a>
+			    <a id="facebook" class="facebook"><div class="action-button shadow animate yellow">facebook</div></a>
+			    <script>
+			    document.getElementById("facebook").addEventListener('click', function()
+				{
+					 var url= $('.slide img').eq(2).attr('src');
+					window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */
+						, url /* url */,
+					 function()
+					 {
+					 	console.log('share ok');
+					 	alert("share ok")
+					 }
+					 ,function(errormsg)
+					 {
+					 	alert(errormsg);
+					 }
+					 );
+				});
+			    </script>
 			</div>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
