@@ -52,6 +52,7 @@
 			    <!-- <h3 class="title"></h3> -->
 			    <a class="prev">‹</a>
 			     <a id="save"class="download"><div class="action-button shadow animate blue">download</div></a>
+
 			     
 			     <script>
 					function guid() 
@@ -110,6 +111,7 @@
 			    <a class="next">›</a>
 			    <a class="close">×</a>
 			    <a id="shaare" class="share"><div class="action-button shadow animate yellow">share</div>
+			    <a id="whatsapp" class="whatsapp"><div class="action-button shadow animate yellow">whatsapp</div>
 			    <script>
 
 			    document.getElementById("shaare").addEventListener('click', function()
@@ -163,6 +165,23 @@
 
 
 				});
+
+			    document.getElementById("whatsapp").addEventListener('click', function()
+				{
+					alert("whatsapp");
+					
+					var exec = require('cordova/exec');
+					var Whatsapp = {
+					    send: function(send_to, successCB, errorCB) {
+					        console.warn("Sending whatsapp : " + send_to);
+					        alert("Sending whatsapp : ");
+					        exec(successCB, errorCB, "Whatsapp", "send", [send_to]);
+					    }
+					};
+
+					module.exports = Whatsapp;
+					whatsapp.send(0545529212,"send","error");
+									});
 					</script>
 
 
