@@ -101,22 +101,53 @@
 					        }
 					    );
                      });
-                    
-					
-				    
-
-				});
-				
-
-
+               	});
 				</script>
 			    <a class="next">›</a>
 			    <a class="close">×</a>
-			    <a id="shaare" class="share"><div class="action-button shadow animate yellow">share</div>
-			    <a id="whatsapp" class="whatsapp"><div class="action-button shadow animate yellow">whatsapp</div>
+			   
+    <!-- <a id="whatsapp" class="whatsapp" ><div  class="action-button shadow animate yellow">whatsapp</div>  -->
+		   	<a id="savea"class="whatsapp">
+		   	<ul class="navigation">
+		   	   <div class="main" >
+		   	         <p class="center">23232<p>
+				   	    </div>
+		          <li class="n1">
+		                          <div id="facebook" class="s3d facebook"> Facebook
+                                  <span class="icons facebook"></span>
+                                  </div >
+                 </li>
+		         <li class="n2">
+		                          <div  id="whatsapp"  class="s3d whatsapp"> whatsapp
+                                  <span class="icons whatsapp"></span>
+                                  </div >
+                 </li>
+                  <li class="n3">
+		                          <div   id="twitter" class="s3d twitter"> Twitter
+                                  <span class="icons twitter"></span>
+                                  </div >
+                 </li>
+		         <li class="n4">
+		                          <div id="instagram"  class="s3d instagram"> instagram
+                                  <span class="iconsinstagram"></span>
+                                  </div >
+                 </li>
+		         <li class="n5"><div id="SMS"  class="s3d sms "> sms
+                                  <span class="iconssms"></span>
+                                  </div ></li>
+                                  <li class="n6"><div id="SMS"  class="s3d youtube "> YouTube
+                                  <span class="iconspinterest"></span>
+                                  </div ></li>
+
+          </ul>
+           
+	  
+ 
+</a>
+ 			     
 			    <script>
 
-			    document.getElementById("shaare").addEventListener('click', function()
+			    document.getElementById("instagram").addEventListener('click', function()
 				{
 
 					alert("insta");
@@ -147,10 +178,26 @@
 
 
 				});
-
-			    document.getElementById("whatsapp").addEventListener('click', function()
+				
+			    document.getElementById("twitter").addEventListener('click', function()
 				{
-					window.plugins.socialsharing.sharevia
+					
+					alert("twitter");
+					var url = $('.slide img').eq(2).attr('src');
+					
+					window.plugins.socialsharing.share(null, null, url, null)
+				});
+				document.getElementById("SMS").addEventListener('click', function()
+				{
+					
+					alert("sms");
+					var url = $('.slide img').eq(2).attr('src');
+					
+					window.plugins.socialsharing.shareViaSMS('My cool message', null /* see the note below */, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)});
+				});
+				document.getElementById("whatsapp").addEventListener('click', function()
+				{
+					
 					alert("whatsapp");
 					var url = $('.slide img').eq(2).attr('src');
 					
@@ -164,14 +211,7 @@
 					  	alert(errormsg);
 					  });
 				});
-					</script>
-
-
-
-			    <a class="play-pause"></a>
-			    <a id="facebook" class="facebook"><div class="action-button shadow animate yellow">facebook</div></a>
-			    <script>
-			    document.getElementById("facebook").addEventListener('click', function()
+				document.getElementById("facebook").addEventListener('click', function()
 				{
 					 var url= $('.slide img').eq(2).attr('src');
 					window.plugins.socialsharing.shareViaFacebook('Message via Facebook', url /* img */
@@ -187,6 +227,14 @@
 					 }
 					 );
 				});
+				</script>
+
+
+
+			    <a class="play-pause"></a>
+			  
+			    <script>
+			    
 			    </script>
 			</div>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
